@@ -29,6 +29,9 @@ else if(race_position == 8){
 else if(race_position == 9){
   racenumber = 144 + 1
 }
+else if(race_position == 10){
+  racenumber = 142 + 1
+}
         
 
 am5.ready(function() {
