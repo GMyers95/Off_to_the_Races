@@ -20,6 +20,7 @@ form.addEventListener("submit", function(event) {
 
   // Get the prediction from the trained model using the input variables
   const prediction = getPredictionFromModel(jockey_coefficient, race_number, track_id_coefficient, course_type_coefficient,track_condition_coefficient, race_type_coefficient);
+
   raceChart(prediction)
 
   predictionOutput.innerHTML = `Prediction: ${prediction}`;
@@ -27,27 +28,28 @@ form.addEventListener("submit", function(event) {
 
 function getPredictionFromModel(jockey_coefficient, race_number, track_id_coefficient, course_type_coefficient,track_condition_coefficient, race_type_coefficient) {
 
-    if (jockey_coefficient == (-2.09187))
+    if (jockey_coefficient == (0.25955))
     {weight_carried = 120.7}
-    else if (jockey_coefficient == -0.84382)
+    else if (jockey_coefficient == -0.13681)
     {weight_carried = 120.8}
-    else if (jockey_coefficient == -1.39210)
+    else if (jockey_coefficient == 0.11636)
     {weight_carried = 120.8}
-    else if (jockey_coefficient == 0)
+    else if (jockey_coefficient == -0.25798)
     {weight_carried = 120.9}
-    else if (jockey_coefficient == -1.60010)
+    else if (jockey_coefficient == 0.19755)
     {weight_carried = 119}
 
-    console.log(weight_carried)
-    console.log(race_number)
-    console.log(jockey_coefficient)
-    console.log(track_id_coefficient)
-    console.log(course_type_coefficient)
-    console.log(race_type_coefficient)
-    console.log(track_condition_coefficient)
+    // console.log(weight_carried)
+    // console.log(race_number)
+    // console.log(jockey_coefficient)
+    // console.log(track_id_coefficient)
+    // console.log(course_type_coefficient)
+    // console.log(race_type_coefficient)
+    // console.log(track_condition_coefficient)
 
-    y = 0.18520*(race_number) - 0.09951*(weight_carried) + track_id_coefficient + course_type_coefficient + track_condition_coefficient + race_type_coefficient + jockey_coefficient + 16.883959286386713
-  
+    y = Math.round(0.3698*(race_number) -0.05089*(weight_carried) + track_id_coefficient + course_type_coefficient + track_condition_coefficient + race_type_coefficient + jockey_coefficient + 4.108333333333333)
+    if (y<=0)
+    {y = 1}
   console.log(y)
 return y
   ;
