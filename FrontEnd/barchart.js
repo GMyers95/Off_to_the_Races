@@ -338,7 +338,7 @@ am5.ready(function() {
       return am5.Bullet.new(root, {
         locationX: 1,
         sprite: am5.Label.new(root, {
-          text: "{valueXWorking.formatNumber('#.# a')}",
+          // text: "{valueXWorking.formatNumber('#.# a')}",
           fill: root.interfaceColors.get("alternativeText"),
           centerX: am5.p100,
           centerY: am5.p50,
@@ -348,7 +348,7 @@ am5.ready(function() {
     });
     
     var label = chart.plotContainer.children.push(am5.Label.new(root, {
-      text: "Go!",
+      // text: "Go!",
       fontSize: "8em",
       opacity: 0.2,
       x: am5.p100,
@@ -439,7 +439,7 @@ am5.ready(function() {
       var itemsWithNonZero = 0;
     
       if (allData[year]) {
-        label.set("text", year.toString());
+        // label.set("text", year.toString());
     
         am5.array.each(series.dataItems, function (dataItem) {
           var category = dataItem.get("categoryY");
