@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Off to the Races</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <!-- add form stylesheet from bootstrap? = -->
+    
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+
+<form id="regression-form">
+
+    <label for="jockey_coefficient">Build Your Race:</label>
+<body>
+<div class="row">
+<div class="col-md-2">
+  <select class="form-select" name="jockey" id="jockey_coefficient">
+    <option selected>Choose a Jockey</option>
+    <option value=0.49968>Reylu Gutierrez</option>
+    <option value=-0.54443>Manuel Franco</option>
+    <option value=0.01113>Eric Cancel</option>
+    <option value=-0.91548>Joel Rosario</option>
+    <option value=0.9491>Andre Shivnarine Worrie</option>
+  </select>
+
+  <select class="form-select" name="id" id="tack_id_coefficient">
+    <option selected>Choose a Track</option>
+    <option value=-0.26758>AQU -Aqueduct</option>
+    <option value=-0.21372>BEL - Belmont</option>
+    <option value=0.4813>SAR - Saratoga</option>
+  </select>
+
+  <select class="form-select" name="type" id="course_type_coefficient">
+    <option selected>Type of Course</option>
+    <option value=-0.40266>D - Dirt</option>
+    <option value=0.40775>O - Outer turf</option>
+    <option value=-0.05327>I - Inner turf</option>
+    <option value=0.04817>T - turf</option>
+  </select>
+
+  <select class="form-select" name="condition" id="track_condition_coefficient">
+    <option selected>Course Condition</option>
+    <option value=-0.14609>YL - Yielding</option>
+    <option value=0.47786>FM - Firm</option>
+    <option value=0.15997>SY - Sloppy</option>
+    <option value=0.44212>GD - Good</option>
+    <option value=0.36562>FT - Fast</option>
+    <option value=0.12857>MY - Muddy</option>
+    <option value=-1.42806>SF - Soft</option>
+  </select>
+
+  <select class="form-select" name="race" id="race_type_coefficient">
+      <option selected>Class</option>
+      <option value=0.09517>ALW - Allowance</option>
+      <option value=-0.54448>AOC - Allowance Optionl Claimer</option>
+      <option value=-0.08785>CLM - Claiming</option>
+      <option value=0.06594>MCL - Maiden Claiming</option>
+      <option value=0.00164>MSW - Maiden Special Weight</option>
+      <option value=-0.27434>SHP - Starter Handicap</option>
+      <option value=-0.34218>SOC - Starter Optional Claimer</option>
+      <option value=-0.13993>SST - Starter Stakes</option>
+      <option value=-0.4903>STK - Stakes</option>
+      <option value=-0.29511>STR - Starter Allowance</option>
+      <option value=-0.82142>WCL - Waiver Claiming</option>
+      <option value=2.83285>WMC - Waiver Maiden Claiming</option>
+  </select>
+
+  <select class="form-select" name="number" id="race_number">
+    <option selected>Race Number</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+    <option value=5>5</option>
+    <option value=6>6</option>
+    <option value=7>7</option>
+    <option value=8>8</option>
+    <option value=9>9</option>
+    <option value=10>10</option>
+    <option value=11>11</option>
+    <option value=12>12</option>
+    <option value=13>13</option>
+  </select>
+
+  <input type="submit" value="Submit">
+  </form>
+</div>
+<!-- <p id="prediction-output"></p> Don't want to print result on screen -->
+
+<div class="col-md-6">
+  <div id="chartdiv"></div>
+</div>
+
+<!-- <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/12766925"><script src="https://public.flourish.studio/resources/embed.js"></script></div> -->
+<div class="col-md-2">
+  <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+          <div class="card carousel-item active" style="width: 12rem;">
+              <img src="https://static.americasbestracing.net/s3fs-public/styles/large/public/reylu-gutierrez.jpg?KHONSa1SS2GQbZtqmIed8QZzxaE.XX.4&itok=AKl_nQxN" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-text">Reylu Gutierrez.</p>
+              </div>
+          </div>
+
+          <div class="card carousel-item" style="width: 12rem;">
+              <img src="https://www.nyra.com/uploads/profile-images/eric-cancel.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-text">Eric Cancel.</p>
+              </div>
+          </div>
+
+          <div class="card carousel-item" style="width: 12rem;">
+              <img src="https://www.nyra.com/uploads/profile-images/manuel-franco.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-text">Manuel Franco.</p>
+              </div>
+          </div>
+
+          <div class="card carousel-item" style="width: 12rem;">
+              <img src="https://www.nyra.com/uploads/profile-images/joel-rosario.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-text">Joel Rosario.</p>
+              </div>
+          </div>
+
+          <div class="card carousel-item" style="width: 12rem;">
+              <img src="https://live.staticflickr.com/65535/43429236045_546119af43_b.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-text">Andre Worrie.</p>
+              </div>
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+</div>
+<!-- Jockey Tableau Viz -->
+<div class="col-md-4">
+  <div class='tableauPlaceholder' id='viz1677029183879' style='position: relative'><noscript><a href='#'><img alt='Jockey Weight Flux ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ho&#47;Horse_Racing_V01&#47;JockeyWeightFlux&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Horse_Racing_V01&#47;JockeyWeightFlux' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ho&#47;Horse_Racing_V01&#47;JockeyWeightFlux&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677029183879');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1600px';vizElement.style.height='927px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1600px';vizElement.style.height='927px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>
+
+<div class="col-md-2">
+  <img src="https://gettingoutofthegate.com/wp-content/uploads/2013/05/Class-Pyramid-Basic.jpg" width="90%">
+</div>
+
+<div class="col-md-4">
+  <div id="carouselExample2" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExample2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExample2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExample2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="track carousel-item active">
+        <img src="https://www.racingtv.com/racecourses/belmont-park/map/turf/flat" width="80%">
+      </div>
+
+      <div class="track carousel-item">
+        <img src="https://www.gamblingsites.com/app/uploads/2018/03/Overview-of-Aqueduct-Racetrack.png" width="90%">
+      </div>
+
+      <div class="track carousel-item">
+          <img src="https://www.gamblingsites.com/app/uploads/2018/04/Saratoga-Track-Layout.png" width="90%">
+      </div>
+      </div>
+    </div>
+</div>
+</div>
+  </div>
+  <!-- model file = -->
+  <script src="model.js"></script>
+  <!-- end model file = -->
+  <script src="barchart.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
