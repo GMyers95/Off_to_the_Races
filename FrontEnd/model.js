@@ -47,9 +47,9 @@ function getPredictionFromModel(jockey_coefficient, race_number, track_id_coeffi
     // console.log(race_type_coefficient)
     // console.log(track_condition_coefficient)
 
-    y = Math.round(0.3698*(race_number) -0.05089*(weight_carried) + track_id_coefficient + course_type_coefficient + track_condition_coefficient + race_type_coefficient + jockey_coefficient + 4.108333333333333)
-    if (y<=0)
-    {y = 1}
+    y = Math.round(Math.abs(0.3698*(race_number) -0.05089*(weight_carried) + track_id_coefficient + course_type_coefficient + track_condition_coefficient + race_type_coefficient + jockey_coefficient + 4.108333333333333))
+    // if (y<=0)
+    // {y = 1}
   console.log(y)
 return y
   ;
@@ -57,7 +57,7 @@ return y
 
 const myCarouselElement = document.querySelector('#myCarousel')
 
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-  interval: 2000,
-  touch: false
-})
+// const carousel = new bootstrap.Carousel(myCarouselElement, {
+//   interval: 2000,
+//   touch: false
+// })

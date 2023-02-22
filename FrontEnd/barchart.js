@@ -263,7 +263,7 @@ am5.ready(function() {
       smallNumberPrefixes: []
     });
     
-    var stepDuration = 2000;
+    var stepDuration = 1250;
     
     
     // Set themes
