@@ -19,7 +19,7 @@ form.addEventListener("submit", function(event) {
   // console.log(race_type_coefficient)
 
   // Get the prediction from the trained model using the input variables
-  const prediction = getPredictionFromModel(jockey_coefficient, race_number, track_id_coefficient, course_type_coefficient,track_condition_coefficient, race_type_coefficient);
+  let prediction = getPredictionFromModel(jockey_coefficient, race_number, track_id_coefficient, course_type_coefficient,track_condition_coefficient, race_type_coefficient);
 
   raceChart(prediction)
 
@@ -28,15 +28,15 @@ form.addEventListener("submit", function(event) {
 
 function getPredictionFromModel(jockey_coefficient, race_number, track_id_coefficient, course_type_coefficient,track_condition_coefficient, race_type_coefficient) {
 
-    if (jockey_coefficient == (0.25955))
+    if (jockey_coefficient == (0.49968))
     {weight_carried = 120.7}
-    else if (jockey_coefficient == -0.13681)
+    else if (jockey_coefficient == -0.54443)
     {weight_carried = 120.8}
-    else if (jockey_coefficient == 0.11636)
+    else if (jockey_coefficient == 0.01113)
     {weight_carried = 120.8}
-    else if (jockey_coefficient == -0.25798)
+    else if (jockey_coefficient == -0.91548)
     {weight_carried = 120.9}
-    else if (jockey_coefficient == 0.19755)
+    else if (jockey_coefficient == 0.9491)
     {weight_carried = 119}
 
     // console.log(weight_carried)
@@ -47,7 +47,8 @@ function getPredictionFromModel(jockey_coefficient, race_number, track_id_coeffi
     // console.log(race_type_coefficient)
     // console.log(track_condition_coefficient)
 
-    y = Math.round(0.3698*(race_number) -0.05089*(weight_carried) + track_id_coefficient + course_type_coefficient + track_condition_coefficient + race_type_coefficient + jockey_coefficient + 4.108333333333333)
+    y = Math.round(0.3698*(race_number) -0.05089*(weight_carried) + track_id_coefficient + course_type_coefficient + track_condition_coefficient + race_type_coefficient + jockey_coefficient + 6.353424818425532)
+    console.log(y)
     if (y<=0)
     {y = 1}
   console.log(y)
