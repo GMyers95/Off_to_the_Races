@@ -1,5 +1,5 @@
 # Off_to_the_Races
-[Build Your Race! :horse:](https://gmyers95.github.io/Off_to_the_Races/)
+[Build Your Race! :horse:](https://gmyers95.github.io/Off_to_the_Races/FrontEnd/index.html)
 
 ## Overview  
 <hr>
