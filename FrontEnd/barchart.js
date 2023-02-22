@@ -99,16 +99,16 @@ am5.ready(function() {
         "Horse 9": 111
       },
       "6": {
-        "YOUR HORSE": 115,
-        "Horse 1": 113,
-        "Horse 2": 113,
-        "Horse 3": 110,
-        "Horse 4": 106,
-        "Horse 5": 107,
-        "Horse 6": 112,
+        "YOUR HORSE": 117,
+        "Horse 1": 112,
+        "Horse 2": 114,
+        "Horse 3": 116,
+        "Horse 4": 104,
+        "Horse 5": 103,
+        "Horse 6": 117,
         "Horse 7": 110,
         "Horse 8": 109,
-        "Horse 9": 111
+        "Horse 9": 115
       },
       "7": {
         "YOUR HORSE": 120,
@@ -147,16 +147,16 @@ am5.ready(function() {
         "Horse 9": 126
       },
       "10": {
-        "YOUR HORSE": 129,
-        "Horse 1": 129,
-        "Horse 2": 128,
-        "Horse 3": 128,
-        "Horse 4": 120,
-        "Horse 5": 125,
-        "Horse 6": 124,
-        "Horse 7": 124,
-        "Horse 8": 125,
-        "Horse 9": 126
+        "YOUR HORSE": 130,
+        "Horse 1": 127,
+        "Horse 2": 125,
+        "Horse 3": 121,
+        "Horse 4": 126,
+        "Horse 5": 124,
+        "Horse 6": 122,
+        "Horse 7": 127,
+        "Horse 8": 126,
+        "Horse 9": 124
       },
       "11": {
         "YOUR HORSE": 132,
