@@ -40,7 +40,8 @@ The dashboard set-up of this project was done through the Bootstrap library (v5.
 ### Javascript
 (@Sofia?)
 
-### Dashboard 
+### Dashboard + Tableau
+(@jhernie)
 
 ### CSS
 
