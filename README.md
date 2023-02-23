@@ -4,7 +4,10 @@
 ## Overview  
 
 For this project, we wanted to create a model-based dashboard that enables users to make educated selections in order for "their horse" to finish at the desired position. The dashboard shows visualizations of each variable that goes into the model. Those variables being: Jockey(and jockey weight), race track, track turf, track condition, race class, and race number. Once a selection is made for each variable and the user clicks "Submit", the selected variables' coefficients are sent to the model equation, the equation outputs the predicted placement, and a race chart is shown that ends with the user's horse at the predicted placement.
-          
+
+
+https://user-images.githubusercontent.com/37047605/220837805-d001f52f-001b-471a-b501-3f924d62508a.mp4
+
 
 ## Group Members
 
