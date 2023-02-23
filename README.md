@@ -16,6 +16,10 @@ https://user-images.githubusercontent.com/37047605/220837805-d001f52f-001b-471a-
 * Lija Hoffman
 * Sofia Ysita
 
+## Project Planning ([Thanks Figma!](https://www.figma.com/file/MISihLNvmLqPOPy6c1V5uf/Off-to-the-Races?node-id=0%3A1&t=n4LGYozbVaJsa7ng-0))
+<img width="752" alt="Screenshot 2023-02-23 at 12 22 14 PM" src="https://user-images.githubusercontent.com/37047605/221044218-649f77fb-5999-43d2-bda5-f0e39bcbdbf2.png">
+
+
 ## Data Sources   
 
 * [Big Data Derby](https://www.kaggle.com/competitions/big-data-derby-2022/data) via Kaggle
@@ -25,8 +29,6 @@ https://user-images.githubusercontent.com/37047605/220837805-d001f52f-001b-471a-
 
 ### Data Extraction
 
-(@Lija and Sofia)
-
 Data retrieved from S3 Bucket. Columns labeled appropriately and transformed into Pandas DataFrame. DataFrame filtered to include only columns and jockeys of interest. Data one-hot encoded, creating a separate column containing dummy values 0 and 1 for for each variable with a string entry. Dependent variable (position at finish) removed from original DataFrame and entered as a separate DataFrame. X and y variables set using independent and dependent variable DataFrames, respectively. Various regression models (i.e., Ridge, Lasso, Multivariate Linear) trained and tested using a combination of scaled and unscaled independent variable data. Training and test scores computed for all regression models. Variable coefficients and y-intercepts calculated for Ridge and Linear regression models. Ultimately, it was determined that the Unscaled Multivariate Linear Regression Model had the greatest predictive accuracy and the associated coefficients and y-intercept were used in the model equation:
  
     0.13409(race_number) - 0.02071(avg(weight_carried) + tack_id_coefficient + course_type_coefficient + track_condition_coefficient +     race_type_coefficient + jockey_coefficient + 6.353424818425532
@@ -34,12 +36,10 @@ Data retrieved from S3 Bucket. Columns labeled appropriately and transformed int
 
 ## Front-end
 
-
 ### HTML
 The dashboard set-up of this project was done through the Bootstrap library (v5.3) as well as some plots embedded from Tableau and the racing chart from (racing library). The set of select menus all interact with the javascript file where the variables' coefficients are plugged in to the model's equation which sends the placement prediction back out to the frontend and triggers the racing chart. Carousels as well as static images are presented in order to give the user more information on the options they have for each select menu.
 
 ### Javascript (Thanks ChatGPT!)
-(@Sofia)
 
 After having a trained model, we needed a front-end/ back-end interaction where inputs from user were taken in the front end and used in the model's equation and later in a race chart.
 Model Equation (model.js):
@@ -49,7 +49,6 @@ https://user-images.githubusercontent.com/37047605/220839099-9be0bb20-dbde-4573-
 
 Race Chart (barchart.js):
 For the race chart we used AMCharts that provide you with the documentation necessary to create a bar race chart. We created a function so the result from the model's equation gets inputted on the bar chart's final position. Through an if statement we made sure the chosen horse ended up on the position the model predicted.
-
 
 ### Dashboard + Tableau
 
@@ -63,5 +62,10 @@ One styles sheet was used for this dashboard which coordinated the sizing and co
 ## Future Development
 With more time:
 * Dynamic filtering that drives a change in jockey and course photos
+* Cleaner formatting
+* More Jockeys to be included in the model
+* More Visualizations (additional Jockey stats)
         
 With more data/deeper dive:
+* Creating live betting functionality! ($$)
+* More model iterations (and explorations)
