@@ -39,9 +39,16 @@ Data retrieved from S3 Bucket. Columns labeled appropriately and transformed int
 The dashboard set-up of this project was done through the Bootstrap library (v5.3) as well as some plots embedded from Tableau and the racing chart from (racing library). The set of select menus all interact with the javascript file where the variables' coefficients are plugged in to the model's equation which sends the placement prediction back out to the frontend and triggers the racing chart. Carousels as well as static images are presented in order to give the user more information on the options they have for each select menu.
 
 ### Javascript (SO ChatGPT)
-(@Sofia?)
+(@Sofia)
 
+After having a trained model, we needed a front-end/ back-end interaction where inputs from user were taken in the front end and used in the model's equation and later in a race chart.
+Model Equation (model.js):
+For the model equation we decided to use Javascript. We asked ChatGPT how to create a form for a multivariate regression for users to input information that will update a trained model, and it responded with an easily modifiable starter code for both HTML and JS files and how they interact (see image below). The HTML contains a "form" with drop down user selection that then is imported to the JS file where the parameters are added to a function with the equation.
 https://user-images.githubusercontent.com/37047605/220839099-9be0bb20-dbde-4573-bee5-3317dec4eb84.mov
+
+Race Chart (barchart.js):
+For the race chart we used AMCharts that provide you with the documentation necessary to create a bar race chart. We created a function so the result from the model's equation gets inputted on the bar chart's final position. Through an if statement we made sure the chosen horse ended up on the position the model predicted.
+
 
 ### Dashboard + Tableau
 (@jhernie)
