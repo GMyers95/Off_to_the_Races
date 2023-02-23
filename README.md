@@ -60,8 +60,8 @@ For the race chart we used AMCharts that provide you with the documentation nece
 One styles sheet was used for this dashboard which coordinated the sizing and colors of the finer details for the final look of the page.
 
 
-### Future Development
+## Future Development
 With more time:
-
+* Dynamic filtering that drives a change in jockey and course photos
         
 With more data/deeper dive:
