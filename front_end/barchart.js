@@ -245,9 +245,19 @@ am5.ready(function() {
     };
  
     allData["17"]["YOUR HORSE"] = racenumber
+
+    // https://stackoverflow.com/questions/70256624/amcharts5-error-when-calling-function-to-draw-chart-second-time
+    function maybeDisposeRoot(divId) {
+      am5.array.each(am5.registry.rootElements, function (root) {
+      if (root.dom.id == divId) {
+        root.dispose();
+        }
+      });
+    };
     
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+    maybeDisposeRoot("chartdiv");
     var root = am5.Root.new("chartdiv");
     
     root.numberFormatter.setAll({
