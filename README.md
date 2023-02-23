@@ -38,8 +38,10 @@ Data retrieved from S3 Bucket. Columns labeled appropriately and transformed int
 ### HTML
 The dashboard set-up of this project was done through the Bootstrap library (v5.3) as well as some plots embedded from Tableau and the racing chart from (racing library). The set of select menus all interact with the javascript file where the variables' coefficients are plugged in to the model's equation which sends the placement prediction back out to the frontend and triggers the racing chart. Carousels as well as static images are presented in order to give the user more information on the options they have for each select menu.
 
-### Javascript
+### Javascript (SO ChatGPT)
 (@Sofia?)
+
+https://user-images.githubusercontent.com/37047605/220839099-9be0bb20-dbde-4573-bee5-3317dec4eb84.mov
 
 ### Dashboard + Tableau
 (@jhernie)
